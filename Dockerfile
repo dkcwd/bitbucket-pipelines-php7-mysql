@@ -1,6 +1,10 @@
 FROM dkcwd/bitbucket-pipelines-default:latest
 MAINTAINER Dave Clark "dave.clark@clarkyoungman.com"
 
+# Handle apt pub key updates
+COPY pubkey_0x4f4ea0aae5267a6c /tmp/pubkey_0x4f4ea0aae5267a6c
+RUN DEBIAN_FRONTEND=noninteractive apt-key add /tmp/pubkey_0x4f4ea0aae5267a6c
+
 # Dependencies
 RUN DEBIAN_FRONTEND=noninteractive apt-key update && \
     DEBIAN_FRONTEND=noninteractive apt-get update && \
