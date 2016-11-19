@@ -19,6 +19,10 @@ RUN DEBIAN_FRONTEND=noninteractive apt-key update && \
     autoconf \
     g++ \
     make \
+    libssl-dev \
+    libcurl4-openssl-dev \
+    libsasl2-dev \
+    libcurl3 \
     --no-install-recommends && rm -r /var/lib/apt/lists/* \
     && apt-get --purge autoremove -y
 
