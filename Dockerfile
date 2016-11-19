@@ -22,6 +22,8 @@ RUN DEBIAN_FRONTEND=noninteractive apt-key update && \
     --no-install-recommends && rm -r /var/lib/apt/lists/* \
     && apt-get --purge autoremove -y
 
+RUN DEBIAN_FRONTEND=noninteractive apt-get update
+
 RUN mkdir -p /usr/local/openssl/include/openssl/ && \
     ln -s /usr/include/openssl/evp.h /usr/local/openssl/include/openssl/evp.h && \
     mkdir -p /usr/local/openssl/lib/ && \
