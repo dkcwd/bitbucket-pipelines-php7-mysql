@@ -29,10 +29,10 @@ RUN mkdir -p /usr/local/openssl/include/openssl/ && \
 
 # MySQL
 ARG MYSQL_ROOT_PASS=root 
-RUN bash -c 'debconf-set-selections <<< "mysql-server-5.7 mysql-server/root_password password $MYSQL_ROOT_PASS"' && \
+RUN bash -c 'debconf-set-selections <<< "mysql-server mysql-server/root_password password $MYSQL_ROOT_PASS"' && \
 		bash -c 'debconf-set-selections <<< "mysql-server-5.7 mysql-server/root_password_again password $MYSQL_ROOT_PASS"' && \
 		DEBIAN_FRONTEND=noninteractive apt-get update && \
-		DEBIAN_FRONTEND=noninteractive apt-get install -qqy mysql-server-5.7
+		DEBIAN_FRONTEND=noninteractive apt-get install -qqy mysql-server
 		
 # PHP7
 RUN add-apt-repository -y ppa:ondrej/php && \
