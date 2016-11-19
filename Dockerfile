@@ -2,7 +2,8 @@ FROM dkcwd/bitbucket-pipelines-default:latest
 MAINTAINER Dave Clark "dave.clark@clarkyoungman.com"
 
 # Dependencies
-RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
+RUN DEBIAN_FRONTEND=noninteractive apt-key update && \
+    DEBIAN_FRONTEND=noninteractive apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get upgrade -y && \
     DEBIAN_FRONTEND=noninteractive apt-get dist-upgrade -y && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y \
