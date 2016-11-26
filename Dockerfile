@@ -53,6 +53,10 @@ RUN add-apt-repository -y ppa:ondrej/php && \
 
 RUN service php7.0-fpm restart
 
+# PhantomJS
+COPY install-phantomjs.sh /tmp/install-phantomjs.sh
+RUN sh /tmp/install-phantomjs.sh
+
 RUN apt-get clean && \
 		apt-get autoremove && \
 		rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
