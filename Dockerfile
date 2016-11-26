@@ -60,3 +60,5 @@ RUN sh /tmp/install-phantomjs.sh
 RUN apt-get clean && \
 		apt-get autoremove && \
 		rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+EXPOSE 4444
