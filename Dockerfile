@@ -56,8 +56,6 @@ RUN service php7.0-fpm restart
 # PhantomJS
 COPY install-phantomjs.sh /tmp/install-phantomjs.sh
 RUN sh /tmp/install-phantomjs.sh
-RUN /root/phantomjs-2.1.1-linux-x86_64/bin/phantomjs --webdriver=4444 --debug=true >/dev/null 2>&1 &
-RUN netstat -tulpn
 
 RUN apt-get clean && \
 		apt-get autoremove && \
