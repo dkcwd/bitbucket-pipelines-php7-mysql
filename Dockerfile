@@ -56,6 +56,7 @@ RUN service php7.0-fpm restart
 # PhantomJS
 COPY install-phantomjs.sh /tmp/install-phantomjs.sh
 RUN sh /tmp/install-phantomjs.sh
+COPY phantomjs /etc/init.d/phantomjs
 
 RUN apt-get clean && \
 		apt-get autoremove && \
