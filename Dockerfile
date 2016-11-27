@@ -57,6 +57,10 @@ RUN service php7.0-fpm restart
 COPY install-phantomjs.sh /tmp/install-phantomjs.sh
 RUN sh /tmp/install-phantomjs.sh
 COPY phantomjs /etc/init.d/phantomjs
+RUN echo 'WEBDRIVER_PORT=8190' > /etc/default/phantomjs
+RUN chmod +x /etc/init.d/phantomjs
+RUN update-rc.d phantomjs defaults
+RUN service phantomjs start
 
 RUN apt-get clean && \
 		apt-get autoremove && \
