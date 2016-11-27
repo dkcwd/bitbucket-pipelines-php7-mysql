@@ -62,4 +62,4 @@ RUN apt-get clean && \
 		apt-get autoremove && \
 		rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-EXPOSE 80 8000 8080 6379 443 4444 3306
+EXPOSE 80 8000 8080 8190 6379 443 4444 3306
