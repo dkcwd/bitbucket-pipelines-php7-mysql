@@ -23,7 +23,7 @@ SCRIPTNAME=/etc/init.d/$NAME
 
 # Overridable options section
 WEBDRIVER_PORT=8190
-DEBUG=false
+DEBUG=true
 WEB_SECURITY=false
 LOG_FILE=/var/log/phantomjs.log
 
