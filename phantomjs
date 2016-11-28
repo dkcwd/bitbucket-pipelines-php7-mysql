@@ -25,12 +25,14 @@ SCRIPTNAME=/etc/init.d/$NAME
 WEBDRIVER_PORT=8190
 DEBUG=true
 WEB_SECURITY=false
+LOCAL_TO_REMOTE_URL_ACCESS=true
 LOG_FILE=/var/log/phantomjs.log
+WEBDRIVER_LOGLEVEL=DEBUG
 
 # Read configuration variable file if it is present
 [ -r /etc/default/$NAME ] && . /etc/default/$NAME
 
-DAEMON_ARGS="--webdriver=$WEBDRIVER_PORT --debug=$DEBUG --web-security=$WEB_SECURITY"
+DAEMON_ARGS="--webdriver=$WEBDRIVER_PORT --debug=$DEBUG --web-security=$WEB_SECURITY --local-to-remote-url-access=$LOCAL_TO_REMOTE_URL_ACCESS --webdriver-loglevel=$WEBDRIVER_LOGLEVEL"
 
 #
 # Function that starts the daemon/service
