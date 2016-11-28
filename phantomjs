@@ -24,12 +24,13 @@ SCRIPTNAME=/etc/init.d/$NAME
 # Overridable options section
 WEBDRIVER_PORT=8190
 DEBUG=false
+WEB_SECURITY=false
 LOG_FILE=/var/log/phantomjs.log
 
 # Read configuration variable file if it is present
 [ -r /etc/default/$NAME ] && . /etc/default/$NAME
 
-DAEMON_ARGS="--webdriver=$WEBDRIVER_PORT --debug=$DEBUG"
+DAEMON_ARGS="--webdriver=$WEBDRIVER_PORT --debug=$DEBUG --web-security=$WEB_SECURITY"
 
 #
 # Function that starts the daemon/service
